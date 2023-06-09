@@ -1,0 +1,2 @@
+const e=document.querySelector(".breed-select"),o=(document.querySelector(".cat-info"),document.querySelectorAll("option"));!async function(e){fetch("https://api.thecatapi.com/v1/breeds").then((e=>e.json())).then((o=>{o.forEach((o=>{e.insertAdjacentHTML("beforeend",`\n                    <option value="${o.id}">${o.name}</option>\n                `)}))})).catch((e=>console.log("Erorr",e)))}(e);e.addEventListener("change",(()=>{o.forEach((e=>{e.hasAttribute("checked")&&console.log("option name",e.value)}))}));
+//# sourceMappingURL=index.cb0c3b81.js.map
