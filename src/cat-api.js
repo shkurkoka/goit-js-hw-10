@@ -1,26 +1,12 @@
 export async function fetchBreeds(selector) {
-    fetch('https://api.thecatapi.com/v1/breeds')
+    return fetch('https://api.thecatapi.com/v1/breeds')
         .then(response => response.json())
-        .then(data => {
-            data.forEach(breed => {
-                selector.insertAdjacentHTML( "beforeend", `
-                    <option value="${breed.id}">${breed.name}</option>
-                `);
-            });
-        })
-        .catch(erorr => console.log("Erorr", erorr));
+        .then(data => data)
 }
 
 export async function fetchCatByBreed(breedId) {
-    fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
+    return fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&api_key=live_qYlL8o9MDIH8U2L6yURyex2Y5rzbgVNFDh0R2EHrDR6dYWpbJMuVjmE2sG4pixTn`)
         .then(response => response.json())
-        .then(data => {
-            data.forEach(breed => {
-                selector.insertAdjacentHTML( "beforeend", `
-                    <option value="${breed.id}">${breed.name}</option>
-                `);
-            });
-        })
-        .catch(erorr => console.log("Erorr", erorr));
+        .then(data => data);
 }
 
