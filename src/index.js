@@ -26,6 +26,7 @@ fetchBreeds()
 
 selector.addEventListener('change', () => {
     // console.log(selector.value);
+    error.style.display = 'none';
     listEl.innerHTML = '';
     loader.style.display = 'block';
     fetchCatByBreed(selector.value)
